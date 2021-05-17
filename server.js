@@ -21,6 +21,14 @@ app.get('/exercises', (req, res) => {
     });
 });
 
+app.post('/exercises/:id', (req, res) => {
+    const sql = `DELETE FROM exercises WHERE id = ${req.params.id}`;
+
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send(result);
+    });
+});
 const port = 5000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

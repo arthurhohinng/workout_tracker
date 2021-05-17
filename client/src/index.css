@@ -42,3 +42,11 @@ code {
 .circles:hover{
   opacity: 50%;
 }
+
+.delete-button {
+  font-size: 200%;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}

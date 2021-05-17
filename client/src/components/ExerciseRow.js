@@ -1,10 +1,11 @@
 import React from 'react'
 import Set from './Set'
+import {FaTimes} from 'react-icons/fa'
 
-const ExerciseRow = ({exercise}) => {
+const ExerciseRow = ({exercise, onDelete}) => {
     let circles = []
     for (let i = 0; i < exercise.sets; i++) {
-        circles.push(<Set/>)
+        circles.push(<Set key={i}/>)
     }
     return (
         <div className="row">
@@ -14,6 +15,8 @@ const ExerciseRow = ({exercise}) => {
                     <h4>{exercise.reps}x{exercise.sets}</h4>
                 </div>
                 {circles}
+                <FaTimes className="delete-button" 
+                onClick={() => onDelete(exercise.id)}/>
             </div>
         </div>
     )

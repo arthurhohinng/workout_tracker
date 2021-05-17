@@ -1,5 +1,6 @@
 import Exercises from './components/Exercises'
 import {useState, useEffect} from 'react'
+import AddExercises from './components/AddExercises'
 
 function App() {
   const [exercises, setExercises] = useState([])
@@ -18,12 +19,17 @@ function App() {
     return data
   }
 
+  const deleteExercise = async (id) => {
+    await fetch(`/exercises/${id}`, {method: 'POST'})
+    setExercises(exercises.filter(exercise => exercise.id !== id))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <h1> WORKOUT LAD</h1>
       </header>
-      <Exercises exercises={exercises}/>
+      <Exercises exercises={exercises} onDelete={deleteExercise}/>
     </div>
   );
 }
