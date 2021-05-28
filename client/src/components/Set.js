@@ -1,6 +1,5 @@
 import { FaCircle } from 'react-icons/fa'
-
-const Set = () => {
+const Set = ({reps}) => {
     const onClick= (e) => {
         e.target.style.color = "lightgreen"
     }

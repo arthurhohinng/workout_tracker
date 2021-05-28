@@ -37,6 +37,7 @@ code {
 .circles {
   font-size: 600%;
   margin: 0%;
+  position: relative;
 }
 
 .circles:hover{
@@ -49,4 +50,21 @@ code {
 
 .delete-button:hover {
   cursor: pointer;
+}
+
+.add-exercise {
+  font-size: 150%;
+  max-width: 75%;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 25%;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+  color: #333;
+  background-color: beige;
+}
+
+.form input{
+  margin: 5px 15px;
 }
